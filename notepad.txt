@@ -1,0 +1,27 @@
+import excel
+import wrtite_db
+
+product_id_column = 'B'
+track_list_id_column = 'A'
+product_id_from_track_list_table_column = 'B'
+track_order_column = 'C'
+link_sample_audio_column = 'D'
+cd_column = 'E'
+track_column = 'F'
+song_title_column = 'G'
+artist_column = 'H'
+duration_column = 'I'
+
+excel.get_track_list_table(product_id_column, track_list_id_column,
+                           product_id_from_track_list_table_column,
+                           track_order_column,
+                           link_sample_audio_column,
+                           cd_column,
+                           track_column,
+                           song_title_column,
+                           artist_column,
+                           duration_column)
+
+
+print('excel read')
+wrtite_db.write_to_server()
