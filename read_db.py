@@ -3,7 +3,7 @@ import psycopg2
 
 def read_db(product_id, track_order):
     try:
-        connection = psycopg2.connect(
+        connection = psycopg2.connect(database = 'tracklist', user = 'allex', password = '',
                                       host = '127.0.0.1',
                                       port = '5432')
     except psycopg2.Error as err:
