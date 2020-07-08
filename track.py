@@ -1,10 +1,11 @@
 import excel
 import read_db
 
+product_code_column = 'A'
 product_id_column = 'B'
 description_column = 'C'
 
-excel.get_track_list_table(product_id_column)
+excel.get_track_list_table(product_id_column, product_code_column)
 
 print('excel read')
 
@@ -64,8 +65,10 @@ for i in range(1, len(excel.product_ids)):
                     f"""
                     </table>
                     """
-                excel.write_description_to_excel(table_string, description_column)
-                excel.work_sheet_index += 1
+                print('product code len', len(excel.product_codes))
+                read_db.update_local_server(excel.product_codes[i], excel.product_ids[i], table_string)
+                # excel.write_description_to_excel(table_string, description_column)
+                # excel.work_sheet_index += 1
                 table_string = ''
                 track_order = 1
                 break

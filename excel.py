@@ -11,12 +11,15 @@ work_sheet_index = 2
 table_location = 'excel\\a.xlsx' if platform.system() == 'Windows' else 'excel/a.xlsx'
 
 product_ids = []
+product_codes = []
 
 
-def get_track_list_table(product_id_column):
+def get_track_list_table(product_id_column, product_code_column):
     global product_ids
+    global product_codes
 
     product_ids = get_all_the_rows_from_column(product_id_column)
+    product_codes = get_all_the_rows_from_column(product_code_column)
     print('table entries: ', len(product_ids))
 
 
