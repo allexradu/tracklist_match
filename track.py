@@ -43,9 +43,8 @@ for i in range(1, len(excel.product_ids)):
 
                 track_order += 1
             else:
-                table_string = \
-                    f"""<table style="width:100%">
-                        <tr>
+                table_string += \
+                    f"""<tr>
                             <td class="hdz-track-list__td"><a href="{record[0]}" class="hdz-track-list__play">Play</a></td>
                             <td class="hdz-track-list__td">{record[1]}</td>
                             <td class="hdz-track-list__td">{record[2]}</td>
