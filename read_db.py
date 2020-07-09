@@ -40,7 +40,8 @@ def update_local_server(product_code, product_id, table_string):
     else:
         print('Connection to the database was successful!')
 
-        def sanitize_single_line_string(string):
+        def sanitize_single_line_string(initial_string):
+            string = str(initial_string)
             if string is not None:
                 return string.replace("'", "''") if string.find(
                     "'") != -1 else string
@@ -53,7 +54,7 @@ def update_local_server(product_code, product_id, table_string):
                             values (
                             '{product_code}',
                             '{product_id}',
-                            '{table_string}'
+                            '{sanitize_single_line_string(table_string)}'
                             );
                         """)
         connection2.commit()
