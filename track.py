@@ -23,8 +23,7 @@ for i in range(1, len(excel.product_ids)):
 
             if track_order == 1:
                 table_string = \
-                    f"""
-                    <table style="hdz-track-list">
+                    f"""<table style="hdz-track-list">
                         <tr>
                             <th class="hdz-track-list__th">MP3</th>
                             <th class="hdz-track-list__th">Disc</th>
@@ -40,12 +39,12 @@ for i in range(1, len(excel.product_ids)):
                             <td class="hdz-track-list__td">{record[3]}</td>
                             <td class="hdz-track-list__td">{record[4]}</td>
                             <td class="hdz-track-list__td">{record[5]}</td>
-                        </tr>
-                    """
+                        </tr>"""
+
                 track_order += 1
             else:
-                f"""
-                    <table style="width:100%">
+                table_string = \
+                    f"""<table style="width:100%">
                         <tr>
                             <td class="hdz-track-list__td"><a href="{record[0]}" class="hdz-track-list__play">Play</a></td>
                             <td class="hdz-track-list__td">{record[1]}</td>
@@ -53,8 +52,8 @@ for i in range(1, len(excel.product_ids)):
                             <td class="hdz-track-list__td">{record[3]}</td>
                             <td class="hdz-track-list__td">{record[4]}</td>
                             <td class="hdz-track-list__td">{record[5]}</td>
-                        </tr>
-                """
+                        </tr>"""
+
                 track_order += 1
         else:
             if track_order == 1:
